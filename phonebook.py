@@ -5,3 +5,5 @@ def solution(phone_book):
         if j.startswith(i):
             return False
     return True
+
+    #zip 사용

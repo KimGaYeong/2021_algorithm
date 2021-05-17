@@ -5,3 +5,6 @@ def solution(s):
         a[i]= a[i][:1].upper() + a[i][1:].lower()
     
     return ' '.join(a)
+
+
+    # upper, lower, join 사용
