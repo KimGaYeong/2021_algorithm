@@ -22,10 +22,10 @@ def DFS(x, y):
     for i in range(4):
         nx = x + dx[i]
         ny = y + dy[i]
-        if 0 <= nx < N and 0 <= ny < M:
+        if 0 <= nx < N and 0 <= ny < M  and visit[nx][ny] != 1:
             if paper[nx][ny] >= 1:
                 paper[nx][ny] += 1
-            elif paper[nx][ny] == 0 and visit[nx][ny] != 1:
+            elif paper[nx][ny] == 0:
                 visit[nx][ny] =1
                 DFS(nx, ny)
     return paper
@@ -56,10 +56,11 @@ while (True):
             print(paper[h][k], end=" ")
         print(" ")
     print("=======================")
-
+    
     if not erase_n_count(paper):
         break
-        
+    answer +=1
+
     print("=========after Erase==========")
     for h in range(N):
         for k in range(M):
