@@ -1,16 +1,17 @@
 from sys import stdin
-import bisect
+from bisect import bisect_left
 N = int(stdin.readline())
 line = list(map(int, stdin.readline().split()))
-DP = [1] * N
+DP = [line[0]]
 
 for i in range(1, N):
     if line[i] > DP[-1]:
-        DP[i] = (line[i])
+        DP.append(line[i])
     else:
-        DP[bisect.bisect(DP, line[i])] = line[i]
+        DP[bisect_left(DP, line[i])] = line[i]
 
-print(DP)
+print(len(DP))
+
 """
 시간 초과 코드
 
@@ -25,4 +26,7 @@ print(max(DP))
 # 시간 초과가 남 ------------>> 이분 탐색을 이용해야 되구나...
 # 이분 탐색을 직접 구현한다면 O(logN)
 
-
+"""
+-> c++의 lower_bound와 같음 (오름차순)
+bisect_left(data, insert data, find start idx(0), len(data))
+"""
