@@ -8,8 +8,6 @@ sys.setrecursionlimit(10000)
     
     기본 재귀 호출 횟수를 늘려주면 해결할 수 있다.
 
-    import sys
-    sys.setrecursionlimit(10000)
 """
 
 M, N = map(int, stdin.readline().split())
