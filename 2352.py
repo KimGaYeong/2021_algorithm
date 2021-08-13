@@ -1,5 +1,7 @@
 from sys import stdin
+
 from bisect import bisect_left
+
 N = int(stdin.readline())
 line = list(map(int, stdin.readline().split()))
 DP = [line[0]]
