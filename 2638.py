@@ -8,14 +8,6 @@ print(N, M)
 paper = [list(map(int, stdin.readline().split())) for _ in range(N)]
 visit = [[0]*M for _ in range(N)]
 
-print("---------before-------------")
-for h in range(N):
-    for k in range(M):
-        print(paper[h][k], end=" ")
-    print(" ")
-
-print("----------------------")
-
 def DFS(x, y):
     dx, dy = [1, 0, -1, 0], [0, -1, 0, 1]
     visit[x][y] = 1
@@ -50,23 +42,11 @@ def erase_n_count(paper):
 answer =0
 while (True):
     DFS(0,0)
-    print("=========after DFS==========")
-    for h in range(N):
-        for k in range(M):
-            print(paper[h][k], end=" ")
-        print(" ")
-    print("=======================")
     
     if not erase_n_count(paper):
         break
     answer +=1
 
-    print("=========after Erase==========")
-    for h in range(N):
-        for k in range(M):
-            print(paper[h][k], end=" ")
-        print(" ")
-    print("=======================")
 
     visit = [[0]*M for _ in range(N)]
 
