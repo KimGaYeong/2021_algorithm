@@ -2,7 +2,12 @@
 from sys import stdin
 
 N = int(stdin.readline())
+"""
+[ 에라토스테네스의 체 ]
+어떤 수 N를 확인 한 후, N**2를 첫항으로 하고 3을 공차로 하는 수를 소수가 아닌 수로 제외시키는 것.
+ex) N = 3 이라면 3**2 = 9가 첫항, 9, 12, 15, ... 등을 소수가 아닌 수로 제외시키기
 
+"""
 a = [False, False] + [True]*(N-1)
 sosulist = []
 
