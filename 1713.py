@@ -10,8 +10,8 @@ def find(list, letter):
     for i in range(len(list)):
         if list[i][1] == letter:
             return i # letter가 list에 있으먄 그 index를 반환
-    else:
-        return -1
+        else:
+            return -1
 
 recommend = []
 for i, letter in enumerate(s_num):
